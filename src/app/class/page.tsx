@@ -6,20 +6,20 @@ import { CardDataType } from '@/src/types/card/page'
 import { Class9BookCardData } from '@/src/app/class/data'
 
 const data = {
-  title: 'Classes | MindBender',
+  title: 'Classes | Codebloglab',
   description:
-    'Explore essential resources for students in Pakistan: Date Sheets, Past Papers, Results, Study Tools, and more available here!',
+    'Explore resources for all classes students in Pakistan, from class 9 to 12 and further more in further.',
   canonical: '/class',
   index: true,
   follow: true,
   image: '/opengraph-image.jpg',
-  url: 'https://www.mindbenderquiz.com/class',
+  url: 'https://www.Codebloglab.website/class',
   keywords: [
-    'mindbender',
-    'class 9 mindbender',
-    'class 10 mindbender',
-    'class 11 mindbender',
-    'class 12 mindbender',
+    'Codebloglab',
+    'class 9 Codebloglab',
+    'class 10 Codebloglab',
+    'class 11 Codebloglab',
+    'class 12 Codebloglab',
     'class books',
     'class notes',
     'class past paper',

@@ -6,19 +6,19 @@ import { CardDataType } from '@/src/types/card/page'
 import { Class11CardData } from '@/src/app/class/11th/data'
 
 const data = {
-  title: 'Class 11 | MindBender',
+  title: 'Class 11 | Codebloglab',
   description:
     'Explore essential resources for Class 11 students in Pakistan: Date Sheets, Past Papers, Results, Study Tools, and more available here!',
-  canonical: '/class-11',
+  canonical: '/11th',
   index: true,
   follow: true,
   image: '/opengraph-image.jpg',
-  url: 'https://www.mindbenderquiz.com/class-11',
+  url: 'https://www.codeblolab.com/11th',
   keywords: [
-    'mindbender class 11',
-    'mindbender class 11th',
-    'class 11th mindbender',
-    'class 11 mindbender',
+    'Codebloglab class 11',
+    'Codebloglab class 11th',
+    'class 11th Codebloglab',
+    'class 11 Codebloglab',
     'class 11 books',
     'class 11 notes',
     'class 11 past paper',

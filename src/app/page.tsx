@@ -9,7 +9,7 @@ const data = {
   index: true,
   follow: true,
   image: '/opengraph-image.jpg',
-  url: 'https://www.mindbenderquiz.com/',
+  url: 'https://www.Codebloglab.website/',
   keywords: ['Codebloglab'],
 }
 
