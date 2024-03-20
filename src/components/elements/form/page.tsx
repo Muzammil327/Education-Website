@@ -17,8 +17,13 @@ export default function Form(props: { url: string }) {
 
     try {
       const res = await axios.post(`/api/form`, data)
-      console.log('res:', res)
-
+      setData({
+        fname: '',
+        lname: '',
+        email: '',
+        url: props.url,
+        message: '',
+      })
       toast.success(res.data.message)
     } catch (error) {
       console.log(error)
