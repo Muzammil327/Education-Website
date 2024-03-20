@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@/src/components/layout/header/header.scss';
+@import '@/src/components/quiz/book/Bookcards.scss';
+@import '@/src/components/quiz/heading1/heading1card.scss';
+@import '@/src/components/quiz/heading2/heading2card.scss';
+@import '@/src/components/quiz/country/countrycard.scss';
+@import '@/src/components/quiz/question/form/quizQuestionForm.scss';
+@import '@/src/components/quiz/question/quiz/quizquestionstructure.scss';
+
+@import '@/src/components/card/cardComponent.scss';
+@import '@/src/styles/article/blogs.scss';
+@import '@/src/styles/article/catgeory.scss';
+
+// social icon
+@layer components {
+  .bg-facebook {
+    background-color: #3b5999;
+  }
+
+  .bg-twitter {
+    background-color: #00acee;
+  }
+
+  .bg-youtube {
+    background-color: #f50000;
+  }
+
+  .bg-instagram {
+    background: linear-gradient(15deg, #ffb13d, #dd277b, #4d5ed4);
+  }
+}
+
+.btn1 {
+  @apply rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm bg-indigo-600 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+}
+
+.btn2 {
+  @apply text-sm font-semibold leading-6 text-gray-900;
+}
+
+// card common
+.postcard,
+.cards {
+  box-shadow:
+    0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur)
+      var(--card-box-shadow-1),
+    0px var(--card-box-shadow-2-y) var(--card-box-shadow-2-blur)
+      var(--card-box-shadow-2),
+    0 0 0 1px var(--card-border-color);
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+
+  &:hover {
+    box-shadow:
+      0px 3px 6px var(--card-hover-box-shadow-1),
+      0px var(--card-hover-box-shadow-2-y) var(--card-hover-box-shadow-2-blur)
+        var(--card-hover-box-shadow-2),
+      0 0 0 1px var(--card-hover-border-color);
+  }
+}
