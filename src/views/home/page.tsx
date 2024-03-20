@@ -8,7 +8,7 @@ export default function HomeView() {
   return (
     <>
       <Header title="Welcome to my Website." />
-      <Feature />
+      {/* <Feature /> */}
       {/* <Stat /> */}
       {/* <VedioSection /> */}
     </>
