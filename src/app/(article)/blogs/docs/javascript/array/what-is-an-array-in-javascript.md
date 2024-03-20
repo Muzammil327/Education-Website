@@ -22,6 +22,7 @@ To declare an array in JavaScript, simply use square brackets `[]`, enclosing th
 ```bash
 let fruits = ['apple', 'banana', 'orange'];
 ```
+
 Title: Understanding Arrays in JavaScript: A Comprehensive
 
 I. Introduction
@@ -60,6 +61,7 @@ B. How do I check if a variable is an array in JavaScript?
 C. Can arrays in JavaScript have different data types?
 
 By following this structured outline, readers will gain a solid understanding of arrays in JavaScript and how to effectively use them in programming.
+
 > JavaScript arrays are zero-indexed, meaning the first element is accessed at `index 0`.
 > In this array:
 

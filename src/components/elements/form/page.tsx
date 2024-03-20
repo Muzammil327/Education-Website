@@ -1,4 +1,30 @@
+'use client'
+import { useState } from 'react'
+import axios from 'axios'
+import { toast } from 'react-toastify'
+
 export default function Form(props: { url: string }) {
+  const [data, setData] = useState({
+    fname: '',
+    lname: '',
+    email: '',
+    url: props.url,
+    message: '',
+  })
+  console.log('data:', data)
+  const SubmitHandle = async (e: any) => {
+    e.preventDefault()
+
+    try {
+      const res = await axios.post(`/api/form`, data)
+      console.log('res:', res)
+
+      toast.success(res.data.message)
+    } catch (error) {
+      console.log(error)
+      toast.warning('Error during Task Update')
+    }
+  }
   return (
     <div className="my-20">
       <div
@@ -21,11 +47,7 @@ export default function Form(props: { url: string }) {
           Any Correctness in website. plz comment below.
         </p>
       </div>
-      <form
-        action="#"
-        method="POST"
-        className="mx-auto mt-16 max-w-xl sm:mt-20"
-      >
+      <form className="mx-auto mt-16 max-w-xl sm:mt-20" onSubmit={SubmitHandle}>
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label
@@ -41,6 +63,8 @@ export default function Form(props: { url: string }) {
                 id="first-name"
                 autoComplete="given-name"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                value={data.fname}
+                onChange={(e) => setData({ ...data, fname: e.target.value })}
               />
             </div>
           </div>
@@ -55,6 +79,8 @@ export default function Form(props: { url: string }) {
               <input
                 type="text"
                 name="last-name"
+                value={data.lname}
+                onChange={(e) => setData({ ...data, lname: e.target.value })}
                 id="last-name"
                 autoComplete="family-name"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -73,6 +99,8 @@ export default function Form(props: { url: string }) {
                 type="email"
                 name="email"
                 id="email"
+                value={data.email}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
                 autoComplete="email"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -89,6 +117,7 @@ export default function Form(props: { url: string }) {
               <input
                 type="url"
                 value={props.url}
+                onChange={(e) => setData({ ...data, url: e.target.value })}
                 name="url"
                 id="url"
                 disabled
@@ -109,8 +138,10 @@ export default function Form(props: { url: string }) {
                 name="message"
                 id="message"
                 rows={4}
+                maxLength={1000}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                defaultValue={''}
+                value={data.message}
+                onChange={(e) => setData({ ...data, message: e.target.value })}
               />
             </div>
           </div>
