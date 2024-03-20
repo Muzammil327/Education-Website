@@ -1,29 +1,40 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import SubHeader from '@/src/components/layout/header/subheader/page'
-import EnglishComp from './UrduComp'
+import UrduComp from './UrduComp'
+import Form from '@/src/components/elements/form/page'
+import Container from '@/src/components/elements/container/page'
 
 const data = {
   title: 'Class 9 Punjab Board Biology Books Urdu Medium',
   description:
     'You can download the Class 9 Punjab Board biology book urdu medium in PDF format, also include the chapter-wise, and for free. Enjoy learning!',
-  canonical: '/class-9/punjab/punjab-board/biology/urdu',
+  canonical: '/class/9th/books/punjab/biology/urdu',
   index: true,
   follow: true,
   image: '/opengraph-image.jpg',
-  url: 'https://www.mindbenderquiz.com/class-9/punjab-board/biology/urdu',
+  url: 'https://www.codebloglab.website/class/9th/books/punjab/biology/urdu',
   keywords: [
-    'mindbender Class 9 Punjab Board Biology Books Urdu Medium',
-    'Class 9 Punjab Board Biology Books Urdu Medium mindbender',
-    'Mindbender Class 9 Punjab Board Biology Books Urdu Medium',
-    'Class 9 Punjab Board Biology Books Urdu Medium Mindbender',
+    'codebloglab Class 9 Punjab Board Biology Books Urdu Medium',
+    'Class 9 Punjab Board Biology Books Urdu Medium codebloglab',
+    'codebloglab Class 9 Punjab Board Biology Books Urdu Medium',
+    'Class 9 Punjab Board Biology Books Urdu Medium codebloglab',
   ],
 }
 export default function page() {
   return (
     <>
       <SubHeader title="Class 9 Punjab Board Biology Books Urdu Medium " />
-      <EnglishComp />
+
+      <Container>
+        <div className="grid md:grid-cols-7 mt-5 mb-28">
+          <div className="md:col-span-5">
+            <UrduComp /> <Form url={data.url} />
+          </div>
+
+          <div className="md:col-span-2"></div>
+        </div>
+      </Container>
     </>
   )
 }

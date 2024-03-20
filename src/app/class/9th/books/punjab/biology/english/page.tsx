@@ -9,16 +9,16 @@ const data = {
   title: 'Class 9 Punjab Board Biology Books English Medium',
   description:
     'You can download the Class 9 Punjab Board biology book english medium in PDF format, also include the chapter-wise, and for free. Enjoy learning!',
-  canonical: '/class-9/punjab/punjab-board/biology/english',
+  canonical: '/class/9th/books/punjab/biology/english',
   index: true,
   follow: true,
   image: '/opengraph-image.jpg',
-  url: 'https://www.mindbenderquiz.com/class-9/punjab/biology/english',
+  url: 'https://www.codebloglab.website/class/9th/books/punjab/biology/english',
   keywords: [
-    'mindbender Class 9 Punjab Board Biology Books English Medium',
-    'Class 9 Punjab Board Biology Books English Medium mindbender',
-    'Mindbender Class 9 Punjab Board Biology Books English Medium',
-    'Class 9 Punjab Board Biology Books English Medium Mindbender',
+    'codebloglab Class 9 Punjab Board Biology Books English Medium',
+    'Class 9 Punjab Board Biology Books English Medium codebloglab',
+    'codebloglab Class 9 Punjab Board Biology Books English Medium',
+    'Class 9 Punjab Board Biology Books English Medium codebloglab',
   ],
 }
 export default function page() {

@@ -7,16 +7,16 @@ const data = {
   title: 'Class 9 Punjab Board Biology Books',
   description:
     'You can download the Class 9 Punjab Board biology book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
-  canonical: '/class-9/book/punjab/biology',
+  canonical: '/class/9th/books/punjab/biology',
   index: true,
   follow: true,
   image: '/opengraph-image.jpg',
-  url: 'https://www.mindbenderquiz.com/class-9/book/punjab/biology',
+  url: 'https://www.codebloglab.website/class/9th/books/punjab/biology',
   keywords: [
-    'mindbender Class 9 Punjab Board Biology Books',
-    'Class 9 Punjab Board Biology Books mindbender',
-    'Mindbender Class 9 Punjab Board Biology Books',
-    'Class 9 Punjab Board Biology Books Mindbender',
+    'codebloglab Class 9 Punjab Board Biology Books',
+    'Class 9 Punjab Board Biology Books codebloglab',
+    'codebloglab Class 9 Punjab Board Biology Books',
+    'Class 9 Punjab Board Biology Books codebloglab',
   ],
 }
 
@@ -32,17 +32,17 @@ const ClassCardData: ClassCardDataType[] = [
   {
     id: 1,
     title: 'Urdu Medium Books',
-    href: '/class-9/book/punjab/biology/english',
+    href: '/class/9th/books/punjab/biology/urdu',
     description:
-      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+      'You can download the Class 9 Punjab Board biology book Urdu medium in PDF format, also include the chapter-wise, and for free. Enjoy learning!',
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
   {
     id: 2,
     title: 'English Medium Books',
-    href: '/class-9/book/punjab/biology/urdu',
+    href: '/class/9th/books/punjab/biology/english',
     description:
-      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+      'You can download the Class 9 Punjab Board biology book Urdu medium in PDF format, also include the chapter-wise, and for free. Enjoy learning!',
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
 ]

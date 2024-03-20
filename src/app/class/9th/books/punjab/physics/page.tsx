@@ -1,28 +1,70 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import SubHeader from '@/src/components/layout/header/subheader/page'
-import Link from 'next/link'
+import Container from '@/src/components/elements/container/page'
+import Card from '@/src/components/card/page'
 
 const data = {
   title: 'Class 9 Punjab Board Physics Books',
   description:
-    'You can get your hands on the Punjab Board Class 9 biology book for free! Download it in PDF format, chapter-wise, and even view it online. Enjoy learning!',
-  canonical: '/class-9/punjab/punjab-board/physics',
+    'You can download the Class 9 Punjab Board Physics book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
+  canonical: 'class/9th/books/punjab/physics',
   index: true,
   follow: true,
   image: '/opengraph-image.jpg',
-  url: 'https://www.mindbenderquiz.com/class-9/punjab-board/physics',
+  url: 'https://www.codebloglab.website/class/9th/books/punjab/physics',
   keywords: [
-    'mindbender Class 9 Punjab Board Physics Books',
-    'Class 9 Punjab Board Physics Books mindbender',
-    'Mindbender Class 9 Punjab Board Physics Books',
-    'Class 9 Punjab Board Physics Books Mindbender',
+    'codebloglab Class 9 Punjab Board Physics Books',
+    'Class 9 Punjab Board Physics Books codebloglab',
+    'codebloglab Class 9 Punjab Board Physics Books',
+    'Class 9 Punjab Board Physics Books codebloglab',
   ],
 }
+
+type ClassCardDataType = {
+  id: number
+  title: string
+  description: string
+  href: string
+  image: string
+}
+
+const ClassCardData: ClassCardDataType[] = [
+  {
+    id: 1,
+    title: 'Urdu Medium Books',
+    href: '/class-9/book/punjab/physics',
+    description:
+      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+    image: '/book/books-of-all-classes-and-professional-course.webp',
+  },
+  {
+    id: 2,
+    title: 'English Medium Books',
+    href: '/class-9/book/punjab/physics',
+    description:
+      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+    image: '/book/books-of-all-classes-and-professional-course.webp',
+  },
+]
+
 export default function page() {
   return (
     <>
       <SubHeader title="Class 9 Punjab Board Physics Books" />
+      <Container>
+        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 py-12 mb-12 md:gap-6">
+          {ClassCardData.map((data: ClassCardDataType) => (
+            <Card
+              key={data.id}
+              title={data.title}
+              description={data.description}
+              href={data.href}
+              image={data.image}
+            />
+          ))}
+        </div>
+      </Container>
     </>
   )
 }
