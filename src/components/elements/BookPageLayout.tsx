@@ -16,6 +16,9 @@ export default function BookPageLayout(props: {
   tableC1: string
   tableC2: string
   url: string
+  fileName: string
+  fileUrl: string
+  fileId: string
 }) {
   return (
     <>
@@ -56,9 +59,9 @@ export default function BookPageLayout(props: {
           </tbody>
         </table>
         <EnglishComp
-          fileName="class-9-punjab-board-biology-book-english-medium.pdf"
-          fileUrl="https://drive.google.com/file/d/1F24QG0BJ0mLsu3PBgLEM7sBcqPovhYk0/preview"
-          fileId="/book/9th/punjab/biology/english/class-9-punjab-board-biology-book-english-medium.pdf"
+          fileName={props.fileName}
+          fileUrl={props.fileUrl}
+          fileId={props.fileId}
         />
         <Form url={props.url} />
       </div>

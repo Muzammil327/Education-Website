@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import SubHeader from '@/src/components/layout/header/subheader/page'
 import Container from '@/src/components/elements/container/page'
 import BookPageLayout from '@/src/components/elements/BookPageLayout'
+import TopProductSlider from '@/src/components/elements/bookSlider'
 
 interface Iprops {
   id: number
@@ -31,7 +32,7 @@ export default function page() {
     <>
       <SubHeader title="Class 9 Punjab Board Biology Books English Medium " />
       <Container>
-        <div className="grid md:grid-cols-7 mt-5 mb-28">
+        <div className="grid md:grid-cols-7 mt-5">
           <div className="md:col-span-5">
             <BookPageLayout
               para="Biology is the study of life. It is one of the most interesting
@@ -47,11 +48,14 @@ export default function page() {
               tableC1="Chapters"
               tableC2="Download"
               url={data.url}
+              fileName="class-9-punjab-board-biology-book-english-medium.pdf"
+              fileUrl="https://drive.google.com/file/d/1F24QG0BJ0mLsu3PBgLEM7sBcqPovhYk0/preview"
+              fileId="/book/9th/punjab/biology/english/class-9-punjab-board-biology-book-english-medium.pdf"
             />
           </div>
-
           <div className="md:col-span-2"></div>
         </div>
+        <TopProductSlider />
       </Container>
     </>
   )
