@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import FileDownloader from '@/src/components/elements/FileDownloader/page'
 
