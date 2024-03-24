@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-
+import style from './form.module.css'
 export default function Form(props: { url: string }) {
   const [data, setData] = useState({
     fname: '',
@@ -11,7 +11,7 @@ export default function Form(props: { url: string }) {
     url: props.url,
     message: '',
   })
-  console.log('data:', data)
+
   const SubmitHandle = async (e: any) => {
     e.preventDefault()
 
@@ -26,7 +26,6 @@ export default function Form(props: { url: string }) {
       })
       toast.success(res.data.message)
     } catch (error) {
-      console.log(error)
       toast.warning('Error during Task Update')
     }
   }
@@ -55,10 +54,7 @@ export default function Form(props: { url: string }) {
       <form className="mx-auto mt-16 max-w-xl sm:mt-20" onSubmit={SubmitHandle}>
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
-            <label
-              htmlFor="first-name"
-              className="block text-sm font-semibold leading-6 text-gray-900"
-            >
+            <label htmlFor="first-name" className={style.label}>
               First name
             </label>
             <div className="mt-2.5">
@@ -66,18 +62,15 @@ export default function Form(props: { url: string }) {
                 type="text"
                 name="first-name"
                 id="first-name"
-                autoComplete="given-name"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                autoComplete="first-name"
+                className={style.input}
                 value={data.fname}
                 onChange={(e) => setData({ ...data, fname: e.target.value })}
               />
             </div>
           </div>
           <div>
-            <label
-              htmlFor="last-name"
-              className="block text-sm font-semibold leading-6 text-gray-900"
-            >
+            <label htmlFor="last-name" className={style.label}>
               Last name
             </label>
             <div className="mt-2.5">
@@ -87,16 +80,13 @@ export default function Form(props: { url: string }) {
                 value={data.lname}
                 onChange={(e) => setData({ ...data, lname: e.target.value })}
                 id="last-name"
-                autoComplete="family-name"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                autoComplete="last-name"
+                className={style.input}
               />
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label
-              htmlFor="email"
-              className="block text-sm font-semibold leading-6 text-gray-900"
-            >
+            <label htmlFor="email" className={style.label}>
               Email
             </label>
             <div className="mt-2.5">
@@ -107,15 +97,12 @@ export default function Form(props: { url: string }) {
                 value={data.email}
                 onChange={(e) => setData({ ...data, email: e.target.value })}
                 autoComplete="email"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className={style.input}
               />
             </div>
           </div>
           <div className="sm:col-span-2">
-            <label
-              htmlFor="email"
-              className="block text-sm font-semibold leading-6 text-gray-900"
-            >
+            <label htmlFor="url" className={style.label}>
               Url
             </label>
             <div className="mt-2.5">
@@ -126,16 +113,13 @@ export default function Form(props: { url: string }) {
                 name="url"
                 id="url"
                 disabled
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className={style.input}
               />
             </div>
           </div>
 
           <div className="sm:col-span-2">
-            <label
-              htmlFor="message"
-              className="block text-sm font-semibold leading-6 text-gray-900"
-            >
+            <label htmlFor="message" className={style.label}>
               Message
             </label>
             <div className="mt-2.5">
@@ -144,7 +128,7 @@ export default function Form(props: { url: string }) {
                 id="message"
                 rows={4}
                 maxLength={1000}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className={style.input}
                 value={data.message}
                 onChange={(e) => setData({ ...data, message: e.target.value })}
               />
@@ -152,10 +136,7 @@ export default function Form(props: { url: string }) {
           </div>
         </div>
         <div className="mt-10">
-          <button
-            type="submit"
-            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
+          <button type="submit" className={style.btn}>
             Submit Here
           </button>
         </div>

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import styles from './ImageComponent.module.css' // Import CSS module for styling
+import styles from './ImageComponent.module.css'
 
 interface ImageComponentProps {
   src: string
@@ -34,8 +34,8 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
         alt={alt}
         height={height}
         width={width}
-        onLoad={handleImageLoad} // Call handleImageLoad when the image has loaded
-        onError={() => setLoading(false)} // Handle error by setting loading to false
+        onLoad={handleImageLoad}
+        onError={() => setLoading(false)}
       />
     </div>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
+import style from './RightPostFollow.module.css'
 
 export default function RightPostFollow() {
   return (
@@ -10,9 +11,9 @@ export default function RightPostFollow() {
       </div>
       <div className="follow">
         <ul>
-          <li className="bg-facebook">
+          <li className={style.facebook}>
             <Link
-              href="https://web.facebook.com/codewithhub/"
+              href="https://web.facebook.com/"
               target="_blank"
               title="facebook"
             >
@@ -22,7 +23,8 @@ export default function RightPostFollow() {
               <span className="text">Facebook</span>
             </Link>
           </li>
-          <li className="bg-twitter">
+          <li className={style.facebook}>
+            {' '}
             <a href="/" target="_blank" title="twitter">
               <span className="icon">
                 <FaTwitter />{' '}
@@ -30,21 +32,17 @@ export default function RightPostFollow() {
               <span className="text">Twitter</span>
             </a>
           </li>
-          <li className="bg-youtube">
-            <a
-              href="https://www.youtube.com/@codewithhubss"
-              target="_blank"
-              title="youtube"
-            >
+          <li className={style.youtube}>
+            <a href="https://www.youtube.com/" target="_blank" title="youtube">
               <span className="icon">
                 <FaYoutube />{' '}
               </span>
               <span className="text">YouTube</span>
             </a>
           </li>
-          <li className="bg-instagram">
+          <li className={style.instagram}>
             <Link
-              href="https://www.instagram.com/codewithhubs/"
+              href="https://www.instagram.com/"
               target="_blank"
               title="instagram"
             >

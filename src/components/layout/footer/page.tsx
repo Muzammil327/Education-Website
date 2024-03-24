@@ -1,9 +1,9 @@
-import {
-  BookOpenIcon,
-  QuestionMarkCircleIcon,
-} from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { FaPeopleArrows, FaReadme } from 'react-icons/fa6'
+import style from './footer.module.css'
+import FaReadme from './FaReadme'
+import FaPeopleArrows from './FaPeopleArrows'
+import QuestionMarkCircleIcon from './QuestionMarkCircleIcon'
+import BookOpenIcon from './BookOpenIcon'
 
 export default function Footer() {
   return (
@@ -28,65 +28,53 @@ export default function Footer() {
                 type="email"
                 autoComplete="email"
                 required
-                className="min-w-0 outline-none flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                className={style.input}
                 placeholder="Enter your email"
               />
-              <button type="submit" className="btn1">
+              <button type="submit" className={style.btn}>
                 Subscribe
               </button>
             </div>
           </div>
           <dl className="grid grid-cols-2 gap-x-8 md:gap-y-6 gap-y-10 lg:pt-2">
-            <div className="flex items-center">
-              <div className="rounded-md bg-white/5 p-2 mr-5 ring-1 ring-indigo-600">
-                <QuestionMarkCircleIcon
-                  className="h-5 w-5 text-white"
-                  aria-hidden="true"
-                />
+            <div className={style.detailInner}>
+              <div className={style.detail}>
+                <QuestionMarkCircleIcon />
               </div>
               <Link href="/quiz">
-                <dt className="font-semibold text-white">Quiz</dt>
+                <dt className={style.text}>Quiz</dt>
               </Link>
             </div>
-            <div className="flex items-center">
-              <div className="rounded-md bg-white/5 p-2 mr-5 ring-1 ring-indigo-600">
-                <QuestionMarkCircleIcon
-                  className="h-5 w-5 text-white"
-                  aria-hidden="true"
-                />
+            <div className={style.detailInner}>
+              <div className={style.detail}>
+                <QuestionMarkCircleIcon />
               </div>
               <Link href="/online-quiz">
-                <dt className="font-semibold text-white">Online Quiz</dt>
+                <dt className={style.text}>Online Quiz</dt>
               </Link>
             </div>
-            <div className="flex items-center">
-              <div className="rounded-md bg-white/5 p-2 mr-5 ring-1 ring-indigo-600">
-                <BookOpenIcon
-                  className="h-5 w-5 text-white"
-                  aria-hidden="true"
-                />
+            <div className={style.detailInner}>
+              <div className={style.detail}>
+                <BookOpenIcon />
               </div>
               <Link href="/class">
-                <dt className="font-semibold text-white">Classes</dt>
+                <dt className={style.text}>Classes</dt>
               </Link>
             </div>
-            <div className="flex items-center">
-              <div className="rounded-md bg-white/5 p-2 ring-1 mr-5 ring-indigo-600">
-                <FaReadme className="h-5 w-5 text-white" aria-hidden="true" />
+            <div className={style.detailInner}>
+              <div className={style.detail}>
+                <FaReadme />
               </div>
               <Link href="/blogs">
-                <dt className="font-semibold text-white">Blogs</dt>
+                <dt className={style.text}>Blogs</dt>
               </Link>
             </div>
-            <div className="flex items-center">
-              <div className="rounded-md bg-white/5 p-2 ring-1 mr-5 ring-indigo-600">
-                <FaPeopleArrows
-                  className="h-5 w-5 text-white"
-                  aria-hidden="true"
-                />
+            <div className={style.detailInner}>
+              <div className={style.detail}>
+                <FaPeopleArrows />
               </div>
               <Link href="/team">
-                <dt className="font-semibold text-white">Team</dt>
+                <dt className={style.text}>Team</dt>
               </Link>
             </div>
           </dl>

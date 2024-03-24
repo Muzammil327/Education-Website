@@ -33,17 +33,17 @@ const ClassCardData: ClassCardDataType[] = [
   {
     id: 1,
     title: 'Urdu Medium Books',
-    href: '/class-9/book/punjab/physics',
+    href: '/class/9th/books/punjab/physics/urdu',
     description:
-      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+      'You can download the Class 9 Punjab Board physics book Urdu medium in PDF format, also include the chapter-wise, and for free. Enjoy learning!',
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
   {
     id: 2,
     title: 'English Medium Books',
-    href: '/class-9/book/punjab/physics',
+    href: '/class/9th/books/punjab/physics/english',
     description:
-      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+      'You can download the Class 9 Punjab Board physics book English medium in PDF format, also include the chapter-wise, and for free. Enjoy learning!',
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
 ]

@@ -6,7 +6,7 @@ export const Class9BookPunjabCardData: CardDataType[] = [
     title: 'Physics Books',
     href: '/class/9th/books/punjab/physics',
     description:
-      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+      'You can download the Class 9 Punjab Board Physics book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
   {
@@ -14,7 +14,7 @@ export const Class9BookPunjabCardData: CardDataType[] = [
     title: 'Chemistry Books',
     href: '/class/9th/books/punjab/chemistry',
     description:
-      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+      'You can download the Class 9 Punjab Board Chemistry book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
   {
@@ -22,7 +22,7 @@ export const Class9BookPunjabCardData: CardDataType[] = [
     title: 'Biology Books',
     href: '/class/9th/books/punjab/biology',
     description:
-      'Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.',
+      'You can download the Class 9 Punjab Board biology book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
 ]

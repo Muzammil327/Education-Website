@@ -1,10 +1,12 @@
 'use client'
-import { useState, useEffect } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
-import Container from '../../elements/container/page'
+import { useState, useEffect } from 'react'
+import { Dialog } from '@headlessui/react'
+import Bars3Icon from './Bars3Icon'
+import XMarkIcon from './XMarkIcon'
+import Container from '@/src/components/elements/container/page'
+import style from './navbar.module.css'
 
 type Slug = {
   name: string
@@ -38,25 +40,35 @@ export default function Navbar() {
   }, [])
 
   return (
-    <section className={`header ${scrolling ? 'header-scrolled' : ''}`}>
-      <div className={`navbar ${scrolling ? 'navbar-fixed' : ''}`}>
+    <section className={`header ${scrolling ? `${style.headerScrolled}` : ''}`}>
+      <div
+        className={`${style.navbar} ${scrolling ? `${style.navbarFixed}` : ''}`}
+      >
         <Container>
-          <nav aria-label="Global">
-            <div className="logo">
-              <Link href="/">
-                <span>Your Company</span>
-                <Image src="/logo.png" alt="Logo" height={99} width={210} />
+          <nav aria-label="Global" className={`${style.nav}`}>
+            <div className="flex mr-10">
+              <Link href="/" className="-m-1.5 p-1.5">
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  height={99}
+                  width={210}
+                  priority
+                />
               </Link>
             </div>
-            <div className="menubutton">
-              <button type="button" onClick={() => setMobileMenuOpen(true)}>
-                <span>Open main menu</span>
-                <Bars3Icon className="icon" aria-hidden="true" />
+            <div className={style.menubutton}>
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(true)}
+                className={style.button}
+              >
+                <Bars3Icon />
               </button>
             </div>
-            <div className="menu">
+            <div className={style.menu}>
               {navigation.map((item: Slug) => (
-                <Link key={item.name} href={item.href}>
+                <Link key={item.name} href={item.href} className={style.a}>
                   {item.name}
                 </Link>
               ))}
@@ -82,7 +94,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                <XMarkIcon />
               </button>
             </div>
             <div className="mt-6 flow-root">

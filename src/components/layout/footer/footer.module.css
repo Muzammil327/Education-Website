@@ -1,0 +1,18 @@
+.input {
+  @apply min-w-0 outline-none flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6;
+}
+.btn {
+  @apply rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm !bg-indigo-600 hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+}
+.detail {
+  @apply rounded-md bg-white/5 p-2 mr-5 ring-1 ring-indigo-600;
+}
+.detailInner {
+  @apply flex items-center;
+}
+.icon {
+  @apply h-5 w-5 text-white;
+}
+.text {
+  @apply font-semibold text-white;
+}

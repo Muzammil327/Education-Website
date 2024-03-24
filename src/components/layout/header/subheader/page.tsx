@@ -1,19 +1,19 @@
-import Link from 'next/link'
 import Container from '@/src/components/elements/container/page'
 import HeaderUpper from '../upper/page'
+import style from './SubHeader.module.css'
 
 export default function SubHeader(props: { title: string }) {
   return (
-    <section className="header bg-white">
+    <section className="bg-white">
       <Container>
-        <div className="hero px-6 pt-14">
-          <div className="bg1" aria-hidden="true">
-            <div className="icon" />
+        <div className={`px-6 pt-14 ${style.hero}`}>
+          <div className={style.bg1} aria-hidden="true">
+            <div className={style.icon} />
           </div>
-          <div className="text mx-auto max-w-3xl py-24 sm:py-36">
-            <HeaderUpper data="text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" />
-            <div className="secondPart">
-              <h1>{props.title}</h1>
+          <div className="mx-auto max-w-3xl py-24 sm:py-36">
+            <HeaderUpper />
+            <div className="text-center mt-4">
+              <h1 className={style.h1}>{props.title}</h1>
             </div>
           </div>
         </div>

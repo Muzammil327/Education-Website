@@ -57,7 +57,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: 'https://www.codebloglab.website/class/9th/books/punjab/chemistry/english',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.codebloglab.website/class/9th/books/punjab/chemistry/urdu',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.6,
+    },
+    {
       url: 'https://www.codebloglab.website/class/9th/books/punjab/physics',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.codebloglab.website/class/9th/books/punjab/physics/english',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.6,
+    },
+    {
+      url: 'https://www.codebloglab.website/class/9th/books/punjab/physics/urdu',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.6,

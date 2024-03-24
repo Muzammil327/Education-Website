@@ -1,6 +1,5 @@
-/* eslint-disable prettier/prettier */
-import ContactUserForm from '@/models/authModel'
-import connectDB from '@/utils/db'
+import ContactForm from '@/src/models/formModel'
+import connectDB from '@/src/utils/db'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
@@ -34,7 +33,6 @@ export async function POST(req: NextRequest) {
     })
   }
 
-
   if (!message) {
     return NextResponse.json({
       status: 400,
@@ -43,7 +41,7 @@ export async function POST(req: NextRequest) {
     })
   }
 
-  const contactform = new ContactUserForm({
+  const contactform = new ContactForm({
     fname,
     lname,
     url,
