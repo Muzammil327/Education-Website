@@ -13,43 +13,14 @@ import 'swiper/css/navigation'
 import { Autoplay, Navigation } from 'swiper/modules'
 import Card from '../card/page'
 // import required modules
-
-const Slider = [
-  {
-    id: 0,
-    title: 'Physics Books',
-    href: '/class/9th/books/punjab/physics',
-    description:
-      'You can download the Class 9 Punjab Board Physics book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
-    image: '/book/books-of-all-classes-and-professional-course.webp',
-  },
-  {
-    id: 1,
-    title: 'Chemistry Books',
-    href: '/class/9th/books/punjab/chemistry',
-    description:
-      'You can download the Class 9 Punjab Board Chemistry book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
-    image: '/book/books-of-all-classes-and-professional-course.webp',
-  },
-  {
-    id: 2,
-    title: 'Biology Books',
-    href: '/class/9th/books/punjab/biology',
-    description:
-      'You can download the Class 9 Punjab Board biology book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
-    image: '/book/books-of-all-classes-and-professional-course.webp',
-  },
-  {
-    id: 3,
-    title: 'Biology Books',
-    href: '/class/9th/books/punjab/biology',
-    description:
-      'You can download the Class 9 Punjab Board biology book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
-    image: '/book/books-of-all-classes-and-professional-course.webp',
-  },
-]
-
-export default function TopProductSlider() {
+interface Iprops {
+  id: number
+  title: string
+  description: string
+  href: string
+  image: string
+}
+export default function TopProductSlider(props: { slider: [] }) {
   return (
     <div className="pb-20">
       <Swiper
@@ -76,10 +47,8 @@ export default function TopProductSlider() {
         modules={[Autoplay, Navigation]}
         className="mySwiper"
       >
-        {Slider.map((data: any) => (
+        {props.slider.map((data: Iprops) => (
           <SwiperSlide key={data.id}>
-            {' '}
-            {/* Assign a unique key to each SwiperSlide */}
             <Card
               key={data.id}
               title={data.title}

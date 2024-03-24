@@ -1,7 +1,7 @@
+import React from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import React from 'react'
-import EnglishComp from './FileShow'
+const EnglishComp = dynamic(() => import('@/src/components/elements/FileShow'))
 const Form = dynamic(() => import('@/src/components/elements/form/page'))
 
 interface Iprops {
@@ -20,6 +20,7 @@ export default function BookPageLayout(props: {
   fileName: string
   fileUrl: string
   fileId: string
+  para2: string
 }) {
   return (
     <>
@@ -62,6 +63,7 @@ export default function BookPageLayout(props: {
           fileUrl={props.fileUrl}
           fileId={props.fileId}
         />
+        <p>{props.para2}</p>
         <Form url={props.url} />
       </div>
     </>

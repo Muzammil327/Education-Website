@@ -14,6 +14,14 @@ interface Iprops {
   link: string
 }
 
+interface Iprops2 {
+  id: number
+  title: string
+  description: string
+  href: string
+  image: string
+}
+
 const data = {
   title: 'Class 9 Punjab Board Biology Books English Medium',
   description:
@@ -30,6 +38,7 @@ const data = {
     'Class 9 Punjab Board Biology Books English Medium codebloglab',
   ],
 }
+
 export default function page() {
   return (
     <>
@@ -46,6 +55,7 @@ export default function page() {
               students are required to bring books with them. From here you can
               download the Biology 9th class Book in PDF for both English and
               Urdu medium."
+              para2="The 9th Class Biology PDF 2024 is also available on our website and they can easily search and download the latest version of biology class 9 book pdf.You can also get the book chapterwise such as biology class 9 chapter 1 with various topics such as Nucleolus, Bleb and Biological membrane or Osmosis or Vascular plant or Prophase or Exocytosis or Endocytosis or Prokaryotes and eukaryotes."
               head="9th Class Biology PDF Book Punjab Board"
               tableData={tableData}
               tableC1="Chapters"
@@ -58,11 +68,62 @@ export default function page() {
           </div>
           <div className="md:col-span-2"></div>
         </div>
-        <TopProductSlider />
+        <TopProductSlider slider={Slider} />
       </Container>
     </>
   )
 }
+
+const Slider: Iprops2[] = [
+  {
+    id: 0,
+    title: 'Class 9 Punjab Board Physics Books English Medium',
+    href: '/class/9th/books/punjab/physics',
+    description:
+      'You can download the Class 9 Punjab Board Physics book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
+    image: '/book/books-of-all-classes-and-professional-course.webp',
+  },
+  {
+    id: 1,
+    title: 'Class 9 Punjab Board Chemistry Books English Medium',
+    href: '/class/9th/books/punjab/chemistry',
+    description:
+      'You can download the Class 9 Punjab Board Chemistry book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
+    image: '/book/books-of-all-classes-and-professional-course.webp',
+  },
+  {
+    id: 2,
+    title: 'Class 9 Punjab Board Math Books English Medium',
+    href: '/class/9th/books/punjab/biology',
+    description:
+      'You can download the Class 9 Punjab Board biology book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
+    image: '/book/books-of-all-classes-and-professional-course.webp',
+  },
+  {
+    id: 3,
+    title: 'Class 10 Punjab Board Biology Books English Medium',
+    href: '/class/9th/books/punjab/biology',
+    description:
+      'You can download the Class 9 Punjab Board biology book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
+    image: '/book/books-of-all-classes-and-professional-course.webp',
+  },
+  {
+    id: 4,
+    title: 'Class 11 Punjab Board Biology Books English Medium',
+    href: '/class/9th/books/punjab/biology',
+    description:
+      'You can download the Class 9 Punjab Board biology book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
+    image: '/book/books-of-all-classes-and-professional-course.webp',
+  },
+  {
+    id: 5,
+    title: 'Class 12 Punjab Board Biology Books English Medium',
+    href: '/class/9th/books/punjab/biology',
+    description:
+      'You can download the Class 9 Punjab Board biology book in PDF format, chapter-wise, and for free. Download it in PDF format, urdu and english medium, Enjoy learning!',
+    image: '/book/books-of-all-classes-and-professional-course.webp',
+  },
+]
 
 const tableData: Iprops[] = [
   { id: 1, title: '9th Class Biology Chapter 1', link: '/' },
