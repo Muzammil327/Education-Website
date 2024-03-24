@@ -2,7 +2,6 @@ import React from 'react'
 import type { Metadata } from 'next'
 import SubHeader from '@/src/components/layout/header/subheader/page'
 import Container from '@/src/components/elements/container/page'
-import Comp from './Comp'
 import BookPageLayout from '@/src/components/elements/BookPageLayout'
 
 interface Iprops {
