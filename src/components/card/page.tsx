@@ -19,15 +19,15 @@ export default function Card(props: {
             width={2240}
           />
         </div>
-        <div className="py-6">
+        <div className="py-6 px-3">
           <div className={style.head}>
             <h5 className={style.h5}>{props.title}</h5>
           </div>
           <p className={style.p}>{props.description}</p>
+          <ButtonWithLoader href={props.href} className="w-full mt-4">
+            Click Here
+          </ButtonWithLoader>
         </div>
-        <ButtonWithLoader href={props.href} className="w-full">
-          Click Here
-        </ButtonWithLoader>
       </div>
     </>
   )

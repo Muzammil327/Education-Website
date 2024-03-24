@@ -1,5 +1,5 @@
 .cards {
-  @apply relative mb-2 pb-4 px-3 flex w-full flex-col rounded-xl bg-clip-border text-gray-700;
+  @apply relative mb-2 flex w-full flex-col rounded-xl bg-clip-border text-gray-700;
   box-shadow:
     0px var(--card-box-shadow-1-y) var(--card-box-shadow-1-blur)
       var(--card-box-shadow-1),

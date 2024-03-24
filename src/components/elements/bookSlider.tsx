@@ -16,7 +16,7 @@ import Card from '../card/page'
 
 const Slider = [
   {
-    id: 1,
+    id: 0,
     title: 'Physics Books',
     href: '/class/9th/books/punjab/physics',
     description:
@@ -24,7 +24,7 @@ const Slider = [
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
   {
-    id: 2,
+    id: 1,
     title: 'Chemistry Books',
     href: '/class/9th/books/punjab/chemistry',
     description:
@@ -32,7 +32,7 @@ const Slider = [
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
   {
-    id: 3,
+    id: 2,
     title: 'Biology Books',
     href: '/class/9th/books/punjab/biology',
     description:
@@ -40,7 +40,7 @@ const Slider = [
     image: '/book/books-of-all-classes-and-professional-course.webp',
   },
   {
-    id: 4,
+    id: 3,
     title: 'Biology Books',
     href: '/class/9th/books/punjab/biology',
     description:
@@ -67,7 +67,7 @@ export default function TopProductSlider() {
             spaceBetween: 50,
           },
         }}
-        spaceBetween={30}
+        spaceBetween={31}
         loop={true}
         autoplay={{
           delay: 2500,
@@ -77,17 +77,17 @@ export default function TopProductSlider() {
         className="mySwiper"
       >
         {Slider.map((data: any) => (
-          <>
-            <SwiperSlide>
-              <Card
-                key={data.id}
-                title={data.title}
-                description={data.description}
-                href={data.href}
-                image={data.image}
-              />
-            </SwiperSlide>
-          </>
+          <SwiperSlide key={data.id}>
+            {' '}
+            {/* Assign a unique key to each SwiperSlide */}
+            <Card
+              key={data.id}
+              title={data.title}
+              description={data.description}
+              href={data.href}
+              image={data.image}
+            />
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>

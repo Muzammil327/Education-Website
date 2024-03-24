@@ -3,6 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import style from './form.module.css'
+
 export default function Form(props: { url: string }) {
   const [data, setData] = useState({
     fname: '',
@@ -14,17 +15,22 @@ export default function Form(props: { url: string }) {
 
   const SubmitHandle = async (e: any) => {
     e.preventDefault()
-
+    const response = await axios.post(`/api/form`, data)
     try {
-      const res = await axios.post(`/api/form`, data)
-      setData({
-        fname: '',
-        lname: '',
-        email: '',
-        url: props.url,
-        message: '',
-      })
-      toast.success(res.data.message)
+      const res = await response.data
+
+      if (res.error && res.error) {
+        toast.error(res.error)
+      } else {
+        toast.success(res.message)
+        setData({
+          fname: '',
+          lname: '',
+          email: '',
+          url: props.url,
+          message: '',
+        })
+      }
     } catch (error) {
       toast.warning('Error during Task Update')
     }
@@ -51,6 +57,7 @@ export default function Form(props: { url: string }) {
           Any Correctness in website. plz comment below.
         </p>
       </div>
+
       <form className="mt-16 sm:mt-20" onSubmit={SubmitHandle}>
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
@@ -134,9 +141,7 @@ export default function Form(props: { url: string }) {
               />
             </div>
           </div>
-        </div>
-        <div className="mt-10">
-          <button type="submit" className={style.btn}>
+          <button type="submit" className={`sm:col-span-2 ${style.btn}`}>
             Submit Here
           </button>
         </div>

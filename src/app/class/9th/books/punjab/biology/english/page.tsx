@@ -3,7 +3,10 @@ import type { Metadata } from 'next'
 import SubHeader from '@/src/components/layout/header/subheader/page'
 import Container from '@/src/components/elements/container/page'
 import BookPageLayout from '@/src/components/elements/BookPageLayout'
-import TopProductSlider from '@/src/components/elements/bookSlider'
+import dynamic from 'next/dynamic'
+const TopProductSlider = dynamic(
+  () => import('@/src/components/elements/bookSlider')
+)
 
 interface Iprops {
   id: number

@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       status: 400,
       success: false,
-      message: 'First Name is Required.',
+      error: 'First Name is Required.',
     })
   }
 
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       status: 400,
       success: false,
-      message: 'Last Name is Required.',
+      error: 'Last Name is Required.',
     })
   }
 
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       status: 400,
       success: false,
-      message: 'Email is Required.',
+      error: 'Email is Required.',
     })
   }
 
@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       status: 400,
       success: false,
-      message: 'Message is Required.',
+      error: 'Message is Required.',
     })
   }
 

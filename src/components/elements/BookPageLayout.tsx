@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import React from 'react'
 import EnglishComp from './FileShow'
-import Form from '@/src/components/elements/form/page'
+const Form = dynamic(() => import('@/src/components/elements/form/page'))
 
 interface Iprops {
   id: number
@@ -39,21 +40,19 @@ export default function BookPageLayout(props: {
           <tbody>
             {props.tableData.map((data: Iprops) => {
               return (
-                <>
-                  <tr className="bg-white border-b">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
-                    >
-                      Chapters {data.id}
-                    </th>
-                    <td className="px-6 py-4">
-                      <Link href={data.link} title={`${data.title}`}>
-                        {data.title}
-                      </Link>
-                    </td>
-                  </tr>
-                </>
+                <tr className="bg-white border-b" key={data.id}>
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                  >
+                    Chapters {data.id}
+                  </th>
+                  <td className="px-6 py-4">
+                    <Link href={data.link} title={`${data.title}`}>
+                      {data.title}
+                    </Link>
+                  </td>
+                </tr>
               )
             })}
           </tbody>
