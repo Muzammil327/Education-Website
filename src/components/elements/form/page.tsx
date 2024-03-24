@@ -44,14 +44,14 @@ export default function Form(props: { url: string }) {
         />
       </div>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h3 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Comment Here
-        </h2>
+        </h3>
         <p className="mt-2 text-lg leading-8 text-gray-600">
           Any Correctness in website. plz comment below.
         </p>
       </div>
-      <form className="mx-auto mt-16 max-w-xl sm:mt-20" onSubmit={SubmitHandle}>
+      <form className="mt-16 sm:mt-20" onSubmit={SubmitHandle}>
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className={style.label}>

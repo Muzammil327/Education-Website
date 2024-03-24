@@ -1,9 +1,15 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import SubHeader from '@/src/components/layout/header/subheader/page'
-import EnglishComp from './EnglishComp'
-import Form from '@/src/components/elements/form/page'
 import Container from '@/src/components/elements/container/page'
+import Comp from './Comp'
+import BookPageLayout from '@/src/components/elements/BookPageLayout'
+
+interface Iprops {
+  id: number
+  title: String
+  link: string
+}
 
 const data = {
   title: 'Class 9 Punjab Board Biology Books English Medium',
@@ -28,8 +34,21 @@ export default function page() {
       <Container>
         <div className="grid md:grid-cols-7 mt-5 mb-28">
           <div className="md:col-span-5">
-            <EnglishComp />
-            <Form url={data.url} />
+            <BookPageLayout
+              para="Biology is the study of life. It is one of the most interesting
+              subjects, it has quite difficult concepts as they can be tricky to
+              understand. It is imperative for the students to keep biology book
+              with them to help them understand the different diagrams and the
+              concepts easily. The schools have strict policy towards books and
+              students are required to bring books with them. From here you can
+              download the Biology 9th class Book in PDF for both English and
+              Urdu medium."
+              head="9th Class Biology PDF Book Punjab Board"
+              tableData={tableData}
+              tableC1="Chapters"
+              tableC2="Download"
+              url={data.url}
+            />
           </div>
 
           <div className="md:col-span-2"></div>
@@ -38,6 +57,18 @@ export default function page() {
     </>
   )
 }
+
+const tableData: Iprops[] = [
+  { id: 1, title: '9th Class Biology Chapter 1', link: '/' },
+  { id: 2, title: '9th Class Biology Chapter 2', link: '/' },
+  { id: 3, title: '9th Class Biology Chapter 3', link: '/' },
+  { id: 4, title: '9th Class Biology Chapter 4', link: '/' },
+  { id: 5, title: '9th Class Biology Chapter 5', link: '/' },
+  { id: 6, title: '9th Class Biology Chapter 6', link: '/' },
+  { id: 7, title: '9th Class Biology Chapter 7', link: '/' },
+  { id: 8, title: '9th Class Biology Chapter 8', link: '/' },
+  { id: 9, title: '9th Class Biology Chapter 9', link: '/' },
+]
 
 export const metadata: Metadata = {
   title: data.title,

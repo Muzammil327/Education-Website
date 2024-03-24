@@ -2,10 +2,12 @@
 import React, { useState } from 'react'
 import FileDownloader from '@/src/components/elements/FileDownloader/page'
 
-export default function EnglishComp() {
+export default function FileShow(props: {
+  fileName: string
+  fileUrl: string
+  fileId: string
+}) {
   const [isLoading, setIsLoading] = useState(true)
-  const fileName = 'class-9-punjab-board-biology-book-english-medium.pdf'
-  const fileId = './class-9-punjab-board-biology-book-english-medium.pdf'
 
   const handleIframeLoad = () => {
     setIsLoading(false)
@@ -19,7 +21,7 @@ export default function EnglishComp() {
         </div>
       )}
       <iframe
-        src="https://drive.google.com/file/d/1F24QG0BJ0mLsu3PBgLEM7sBcqPovhYk0/preview"
+        src={props.fileUrl}
         allow="autoplay"
         allowFullScreen
         className={`w-full px-2 lg:h-[900px] md:h-[800] h-[600px] ${isLoading ? 'hidden' : ''}`}
@@ -27,7 +29,11 @@ export default function EnglishComp() {
         width={900}
         onLoad={handleIframeLoad}
       ></iframe>
-      <FileDownloader fileId={fileId} fileName={fileName} />
+      <FileDownloader
+        fileId={props.fileId}
+        fileName={props.fileName}
+        text="Download 9th Punjab Biology Books English Medium"
+      />
     </>
   )
 }
