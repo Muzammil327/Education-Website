@@ -11,7 +11,8 @@ import 'swiper/css/navigation'
 
 // import required modules
 import { Autoplay, Navigation } from 'swiper/modules'
-import Card from '../card/page'
+import dynamic from 'next/dynamic'
+const Card = dynamic(() => import('@/src/components/card/page'))
 // import required modules
 interface Iprops {
   id: number
@@ -20,7 +21,7 @@ interface Iprops {
   href: string
   image: string
 }
-export default function TopProductSlider(props: { slider: [] }) {
+export default function TopProductSlider(props: { slider: Iprops[] }) {
   return (
     <div className="pb-20">
       <Swiper

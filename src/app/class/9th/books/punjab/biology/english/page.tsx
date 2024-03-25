@@ -47,16 +47,9 @@ export default function page() {
         <div className="grid md:grid-cols-7 mt-5">
           <div className="md:col-span-5">
             <BookPageLayout
-              para="Biology is the study of life. It is one of the most interesting
-              subjects, it has quite difficult concepts as they can be tricky to
-              understand. It is imperative for the students to keep biology book
-              with them to help them understand the different diagrams and the
-              concepts easily. The schools have strict policy towards books and
-              students are required to bring books with them. From here you can
-              download the Biology 9th class Book in PDF for both English and
-              Urdu medium."
-              para2="The 9th Class Biology PDF 2024 is also available on our website and they can easily search and download the latest version of biology class 9 book pdf.You can also get the book chapterwise such as biology class 9 chapter 1 with various topics such as Nucleolus, Bleb and Biological membrane or Osmosis or Vascular plant or Prophase or Exocytosis or Endocytosis or Prokaryotes and eukaryotes."
-              head="9th Class Biology PDF Book Punjab Board"
+              para="Biology is a field of science that studies life and living organisms. It covers a broad range of topics varying from the structure of cells to ecosystems. The main objective of biology is to understand how living organisms function, evolve, and interact with their surroundings. Important areas of focus include genetics, ecology, and evolutionary biology. These fields provide understandings into the mechanisms of inheritance, the interdependence of species, and the processes of adaptation over time. Professions such as physiology and microbiology explore the workings of living systems at various levels, from the molecular level to complex organisms. From here you can download the 9th class Biology Book in PDF for both English and Urdu medium."
+              para2="Analyze our website to discover a wide range of biology books, specifically designed for classes 10, 11, and 12 of all boards. You can also obtain a biology class 9 book chapter-wise, which covers a variety of topics.We are excited to announce that an other 9th-grade book is now available on our website! This excellent resource can help you achieve academic success, so make sure to download it today!"
+              head="Class 9th Biology Book Punjab Board Download PDF"
               tableData={tableData}
               tableC1="Chapters"
               tableC2="Download"
