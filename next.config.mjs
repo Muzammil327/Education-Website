@@ -9,6 +9,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+
   plugins: [forms],
 
   images: {
@@ -43,6 +44,20 @@ const nextConfig = {
       },
     ],
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.codebloglab.com' }],
+        destination: 'https://codebloglab.com/:path*',
+        permanent: true,
+      },
+    ]
+  },
+  trailingSlash: true,
+  reactStrictMode: true,
+  swcMinify: true,
 }
 
 export default nextConfig

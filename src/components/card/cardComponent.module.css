@@ -18,7 +18,7 @@
 }
 
 .image {
-  @apply relative overflow-hidden text-white shadow-lg rounded-xl bg-clip-border shadow-blue-500/40;
+  @apply relative overflow-hidden text-white shadow-lg rounded-tl-xl rounded-tr-xl bg-clip-border shadow-blue-500/40;
 }
 
 .head {

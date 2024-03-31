@@ -3,7 +3,7 @@ import { useState, useEffect, Key } from 'react'
 import slugify from 'slugify'
 import Link from 'next/link'
 import { Mcq } from '@/src/types/quiz/page'
-import Container from '@/src/components/elements/container/page'
+import Container from '@/src/components/elements/container'
 
 export default function QuizHeading1(props: { params: string }) {
   const [uniqueBooks, setUniqueBooks] = useState<string[]>([])

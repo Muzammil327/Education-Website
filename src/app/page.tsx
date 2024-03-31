@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import HomeView from '@/src/views/home/page'
+import Footer from '@/src/components/layout/footer/page'
+import Navbar from '@/src/components/layout/navbar/page'
 
 const data = {
   title: 'Codebloglab',
@@ -15,9 +17,13 @@ const data = {
 
 export default function Home() {
   return (
-    <main>
-      <HomeView />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <HomeView />
+      </main>
+      <Footer />
+    </>
   )
 }
 

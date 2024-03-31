@@ -3,8 +3,9 @@ import mongoose, { Document } from 'mongoose'
 
 interface IDocument extends Document {
   title: string
-  descripton: string
+  description: string
   keyword: [string]
+  slug: string
 }
 
 const BookSchema = new mongoose.Schema<IDocument>({
@@ -12,7 +13,7 @@ const BookSchema = new mongoose.Schema<IDocument>({
     type: String,
     required: true,
   },
-  descripton: {
+  description: {
     type: String,
     required: true,
   },
@@ -20,8 +21,12 @@ const BookSchema = new mongoose.Schema<IDocument>({
     type: [String],
     required: true,
   },
+  slug: {
+    type: String,
+    required: true,
+  },
 })
 
-const BookQuiz =
-  mongoose.models.BookQuiz || mongoose.model<IDocument>('BookQuiz', BookSchema)
-export default BookQuiz
+const Book =
+  mongoose.models.Book || mongoose.model<IDocument>('Book', BookSchema)
+export default Book

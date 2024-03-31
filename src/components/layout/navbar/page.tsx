@@ -5,21 +5,18 @@ import { useState, useEffect } from 'react'
 import { Dialog } from '@headlessui/react'
 import Bars3Icon from './Bars3Icon'
 import XMarkIcon from './XMarkIcon'
-import Container from '@/src/components/elements/container/page'
+import Container from '@/src/components/elements/container'
 import style from './navbar.module.css'
+import { NavbarIpropsSlug } from './type'
 
-type Slug = {
-  name: string
-  href: string
-}
-
-const navigation: Slug[] = [
+const navigation: NavbarIpropsSlug[] = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Team', href: '/team' },
+  // { name: 'About', href: '/about' },
+  // { name: 'Team', href: '/team' },
   { name: 'Quiz', href: '/quiz' },
-  { name: 'Online Quiz', href: '/online-quiz' },
-  { name: 'Blogs', href: '/blogs' },
+  { name: 'Class', href: '/class' },
+  // { name: 'Online Quiz', href: '/online-quiz' },
+  // { name: 'Blogs', href: '/blogs' },
 ]
 
 export default function Navbar() {
@@ -40,7 +37,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <section className={`header ${scrolling ? `${style.headerScrolled}` : ''}`}>
+    <nav className={`header ${scrolling ? `${style.headerScrolled}` : ''}`}>
       <div
         className={`${style.navbar} ${scrolling ? `${style.navbarFixed}` : ''}`}
       >
@@ -67,7 +64,7 @@ export default function Navbar() {
               </button>
             </div>
             <div className={style.menu}>
-              {navigation.map((item: Slug) => (
+              {navigation.map((item: NavbarIpropsSlug) => (
                 <Link key={item.name} href={item.href} className={style.a}>
                   {item.name}
                 </Link>
@@ -115,6 +112,6 @@ export default function Navbar() {
           </Dialog.Panel>
         </Dialog>
       </div>
-    </section>
+    </nav>
   )
 }

@@ -1,4 +1,4 @@
-import Container from '@/src/components/elements/container/page'
+import Container from '@/src/components/elements/container'
 import HeaderUpper from '../upper/page'
 import style from './SubHeader.module.css'
 
@@ -10,8 +10,8 @@ export default function SubHeader(props: { title: string }) {
           <div className={style.bg1} aria-hidden="true">
             <div className={style.icon} />
           </div>
-          <div className="mx-auto max-w-3xl py-24 sm:py-36">
-            <HeaderUpper />
+          <div className="mx-auto py-24 sm:py-36">
+            {/* <HeaderUpper /> */}
             <div className="text-center mt-4">
               <h1 className={style.h1}>{props.title}</h1>
             </div>

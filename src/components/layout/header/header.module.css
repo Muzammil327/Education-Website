@@ -33,7 +33,7 @@
 }
 
 .p {
-  @apply mt-6 text-lg leading-8 text-gray-600;
+  @apply mt-6 md:text-lg text-base leading-8 text-gray-600;
 }
 
 .btnGroup {

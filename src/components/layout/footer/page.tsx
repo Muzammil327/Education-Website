@@ -4,10 +4,26 @@ import FaReadme from './FaReadme'
 import FaPeopleArrows from './FaPeopleArrows'
 import QuestionMarkCircleIcon from './QuestionMarkCircleIcon'
 import BookOpenIcon from './BookOpenIcon'
+import Newsletter from './newsletter'
+
+const footer = [
+  {
+    id: 0,
+    name: 'Quiz',
+    link: '/quiz',
+    icon: QuestionMarkCircleIcon,
+  },
+  {
+    id: 1,
+    name: 'Classes',
+    link: '/class',
+    icon: BookOpenIcon,
+  },
+]
 
 export default function Footer() {
   return (
-    <section className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+    <footer className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
@@ -15,68 +31,26 @@ export default function Footer() {
               Subscribe to our newsletter.
             </h3>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing
-              velit quis. Duis tempor incididunt dolore.
+              Stay in the loop with the latest news, and tips straight to your
+              inbox! Don&apos;t miss out on valuable insights and exciting
+              updates from us.
             </p>
-            <div className="mt-6 flex max-w-md gap-x-4">
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email-address"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className={style.input}
-                placeholder="Enter your email"
-              />
-              <button type="submit" className={style.btn}>
-                Subscribe
-              </button>
-            </div>
+            <Newsletter />
           </div>
           <dl className="grid grid-cols-2 gap-x-8 md:gap-y-6 gap-y-10 lg:pt-2">
-            <div className={style.detailInner}>
-              <div className={style.detail}>
-                <QuestionMarkCircleIcon />
+            {footer.map((footer) => (
+              <div className={style.detailInner} key={footer.name}>
+                <div className={style.detail}>
+                  <footer.icon
+                    className="h-6 w-6 text-white"
+                    aria-hidden="true"
+                  />
+                </div>
+                <Link href={footer.link}>
+                  <dt className={style.text}>{footer.name}</dt>
+                </Link>
               </div>
-              <Link href="/quiz">
-                <dt className={style.text}>Quiz</dt>
-              </Link>
-            </div>
-            <div className={style.detailInner}>
-              <div className={style.detail}>
-                <QuestionMarkCircleIcon />
-              </div>
-              <Link href="/online-quiz">
-                <dt className={style.text}>Online Quiz</dt>
-              </Link>
-            </div>
-            <div className={style.detailInner}>
-              <div className={style.detail}>
-                <BookOpenIcon />
-              </div>
-              <Link href="/class">
-                <dt className={style.text}>Classes</dt>
-              </Link>
-            </div>
-            <div className={style.detailInner}>
-              <div className={style.detail}>
-                <FaReadme />
-              </div>
-              <Link href="/blogs">
-                <dt className={style.text}>Blogs</dt>
-              </Link>
-            </div>
-            <div className={style.detailInner}>
-              <div className={style.detail}>
-                <FaPeopleArrows />
-              </div>
-              <Link href="/team">
-                <dt className={style.text}>Team</dt>
-              </Link>
-            </div>
+            ))}
           </dl>
         </div>
       </div>
@@ -92,6 +66,6 @@ export default function Footer() {
           }}
         />
       </div>
-    </section>
+    </footer>
   )
 }

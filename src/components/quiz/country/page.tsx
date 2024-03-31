@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import slugify from 'slugify'
 import { FaBolt } from 'react-icons/fa6'
 import { Mcq } from '@/src/types/quiz/page'
-import Container from '@/src/components/elements/container/page'
+import Container from '@/src/components/elements/container'
 
 export default function QuizCountry(props: {
   book: string

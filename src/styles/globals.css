@@ -5,10 +5,10 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif !important;
   @apply bg-white overflow-x-hidden;
 }
+
 p {
-  font-size: 16px;
   line-height: 26px;
+  @apply text-lg py-3 text-gray-500;
 }

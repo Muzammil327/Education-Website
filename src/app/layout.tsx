@@ -1,27 +1,33 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+
 import '@/src/styles/globals.css'
 import '@/src/styles/main.scss'
-import Footer from '@/src/components/layout/footer/page'
-import Navbar from '@/src/components/layout/navbar/page'
+
 import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Codebloglab',
+  title: 'growlearnhub',
   description:
     'Main purpose of Codebloglab is to empowering through education and technical skills. Dive into study and technical work for personal and professional growth.',
   keywords: ['Codebloglab'],
   openGraph: {
-    title: 'Codebloglab',
-    description: 'Codebloglab',
+    title: 'growlearnhub',
+    description: 'growlearnhub',
   },
-  metadataBase: new URL('https://www.codebloglab.website'),
+  metadataBase: new URL('https://growlearnhub.com'),
   twitter: {
-    title: 'Codebloglab',
-    description: 'Codebloglab',
+    title: 'growlearnhub',
+    description: 'growlearnhub',
   },
+}
+
+const data = {
+  applicationName: 'Next.js',
+  authorName: 'Muhammad Muzammil Safdar',
+  domain: 'growlearnhub.com',
 }
 
 export default function RootLayout({
@@ -32,17 +38,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="application-name" content="Next.js" />
-        <meta name="author" content="Muhammad Muzammil Safdar" />
-        <link rel="author" href="https://codebloglab.website/" />
-        <meta name="generator" content="Next.js" />
+        <meta name="application-name" content={data.applicationName} />
+        <meta name="author" content={data.authorName} />
+        <link rel="author" href="https://growlearnhub.com/" />
+        <meta name="generator" content={data.applicationName} />
         <meta name="referrer" content="origin-when-cross-origin" />
         <meta name="color-scheme" content="light" />
-        <meta name="creator" content="codebloglab.website" />
-        <meta name="publisher" content="codebloglab.website" />
+        <meta name="creator" content={data.domain} />
+        <meta name="publisher" content={data.domain} />
         {/* og */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="codebloglab.website" />
+        <meta property="og:site_name" content={data.domain} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="600" />
@@ -71,23 +77,22 @@ export default function RootLayout({
         />
         {/* twitter */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:creator" content="@codebloglab" />
-        <meta property="twitter:domain" content="codebloglab.website" />
-
+        <meta name="twitter:creator" content="@growlearnhub" />
+        <meta property="twitter:domain" content={data.domain} />
+        {/* ahref  */}
         <meta
           name="ahrefs-site-verification"
           content="234939215ab82c4e0069a4dfb6f90dcda6f5777af678e3dffac7654efdddbf42"
         ></meta>
+        {/* google search console  */}
         <meta
           name="google-site-verification"
           content="TLC1ScjuJKnpeLltQJOI6Xu0QwitVD-gOYWCfoQarwo"
         />
       </head>
       <body className={inter.className}>
-        <Navbar />
         {children}
         <ToastContainer />
-        <Footer />
       </body>
     </html>
   )

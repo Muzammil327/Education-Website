@@ -7,8 +7,8 @@ import VedioSection from '@/src/components/home/vedioSection/page'
 export default function HomeView() {
   return (
     <>
-      <Header title="Welcome to my Website." />
-      {/* <Feature /> */}
+      <Header title="Welcome to Codebloglab Website." />
+      <Feature />
       {/* <Stat /> */}
       {/* <VedioSection /> */}
     </>

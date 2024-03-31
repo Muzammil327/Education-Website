@@ -5,3 +5,9 @@ export interface CardDataType {
   href: string
   image: string
 }
+
+export interface CardDataType2 {
+  id: number
+  title: string
+  href: string
+}
