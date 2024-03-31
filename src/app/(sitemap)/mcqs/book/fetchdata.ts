@@ -1,6 +1,6 @@
 export async function getData1() {
   try {
-    const response = await fetch(`${process.env.NEXT_URL}/api/book`, {
+    const response = await fetch(`https://www.codebloglab.website/api/book`, {
       // next: { revalidate: 3600 },
       cache: 'no-store',
     })

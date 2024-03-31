@@ -4,7 +4,7 @@ export default async function sitemap() {
   const data = await getData1()
   console.log(data)
   const posts = data.user.map((data: any) => ({
-    url: `${process.env.NEXT_URL}/quiz/${data.slug}`,
+    url: `https://www.codebloglab.website/quiz/${data.slug}`,
     lastModified: new Date(),
   }))
 
