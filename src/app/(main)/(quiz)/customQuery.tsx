@@ -1,6 +1,7 @@
 'use client'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+
 export const CustomQuery = (fetchURL: any) => {
   const [fetchdata, setFetchData] = useState([])
   const [loading, setLoading] = useState(false)
@@ -12,8 +13,8 @@ export const CustomQuery = (fetchURL: any) => {
         setError(false)
         setLoading(true)
         const response = await axios.get(fetchURL)
-        console.log('responseData:', response.data)
-        setFetchData(response.data)
+        console.log('responseData:', response.data.user)
+        setFetchData(response.data.user)
         setLoading(false)
       } catch (error) {
         console.log('error :', error)

@@ -19,24 +19,34 @@ import { useEffect, useState } from 'react'
 //   url: 'https://www.Codebloglab.website/',
 //   keywords: ['Codebloglab'],
 // }
+import { CustomQuery } from './(main)/(quiz)/customQuery'
 
 export default function Home() {
-  const [data, setData] = useState([])
-  console.log(data)
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(`/api/book`)
-      setData(response.data.user)
-    }
-    fetchData()
-  }, [])
+  const { fetchdata, loading, error } = CustomQuery(
+    'https://www.codebloglab.website/api/book'
+  )
+  if (loading) {
+    return (
+      <>
+        <h1>Loadding ...</h1>
+      </>
+    )
+  }
+  if (error) {
+    return (
+      <>
+        <h1>Error ...</h1>
+      </>
+    )
+  }
+
   return (
     <>
-      {data.map((data: any) => {
+      {fetchdata.map((data: any) => {
         return (
-          <>
+          <div key={data._id}>
             <h1>{data.title}</h1>
-          </>
+          </div>
         )
       })}
       {/* <Navbar />
