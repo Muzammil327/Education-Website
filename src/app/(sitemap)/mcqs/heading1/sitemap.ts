@@ -51,7 +51,7 @@ export default async function sitemap() {
   let posts = [] // Default value for posts
 
   try {
-    let data1 = await fetch('http://localhost:3000/api/heading1')
+    let data1 = await fetch('https://codebloglab.website/api/heading1')
     let datapost1 = await data1.json()
     posts = datapost1.user.map((item: any) => {
       const slug = slugify(item.bookName, {
