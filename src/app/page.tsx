@@ -1,64 +1,85 @@
-import type { Metadata } from 'next'
-import HomeView from '@/src/views/home/page'
-import Footer from '@/src/components/layout/footer/page'
-import Navbar from '@/src/components/layout/navbar/page'
+'use client'
 
-const data = {
-  title: 'Codebloglab',
-  description:
-    'Main purpose of Codebloglab is to empowering through education and technical skills. Dive into study and technical work for personal and professional growth.',
-  canonical: '/',
-  index: true,
-  follow: true,
-  image: '/opengraph-image.jpg',
-  url: 'https://www.Codebloglab.website/',
-  keywords: ['Codebloglab'],
-}
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+
+// import type { Metadata } from 'next'
+// import HomeView from '@/src/views/home/page'
+// import Footer from '@/src/components/layout/footer/page'
+// import Navbar from '@/src/components/layout/navbar/page'
+
+// const data = {
+//   title: 'Codebloglab',
+//   description:
+//     'Main purpose of Codebloglab is to empowering through education and technical skills. Dive into study and technical work for personal and professional growth.',
+//   canonical: '/',
+//   index: true,
+//   follow: true,
+//   image: '/opengraph-image.jpg',
+//   url: 'https://www.Codebloglab.website/',
+//   keywords: ['Codebloglab'],
+// }
 
 export default function Home() {
+  const [data, setData] = useState([])
+  console.log(data)
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(`/api/book`)
+      setData(response.data.user)
+    }
+    fetchData()
+  }, [])
   return (
     <>
-      <Navbar />
+      {data.map((data: any) => {
+        return (
+          <>
+            <h1>{data.title}</h1>
+          </>
+        )
+      })}
+      {/* <Navbar />
       <main>
         <HomeView />
       </main>
-      <Footer />
+      <Footer /> */}
     </>
   )
 }
 
-export const metadata: Metadata = {
-  title: data.title,
-  description: data.description,
-  keywords: data.keywords,
-  openGraph: {
-    title: data.title,
-    description: data.description,
-    url: data.url,
-    images: [
-      {
-        url: data.image,
-        alt: data.title,
-      },
-    ],
-  },
-  alternates: {
-    canonical: data.canonical,
-  },
-  robots: {
-    index: data.index,
-    follow: data.follow,
-    googleBot: {
-      index: data.index,
-      follow: data.follow,
-    },
-  },
-  twitter: {
-    title: data.title,
-    description: data.description,
-    images: {
-      url: data.image,
-      alt: data.title,
-    },
-  },
-}
+// export const metadata: Metadata = {
+//   title: data.title,
+//   description: data.description,
+//   keywords: data.keywords,
+//   openGraph: {
+//     title: data.title,
+//     description: data.description,
+//     url: data.url,
+//     images: [
+//       {
+//         url: data.image,
+//         alt: data.title,
+//       },
+//     ],
+//   },
+//   alternates: {
+//     canonical: data.canonical,
+//   },
+//   robots: {
+//     index: data.index,
+//     follow: data.follow,
+//     googleBot: {
+//       index: data.index,
+//       follow: data.follow,
+//     },
+//   },
+//   twitter: {
+//     title: data.title,
+//     description: data.description,
+//     images: {
+//       url: data.image,
+//       alt: data.title,
+//     },
+//   },
+// }
