@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getData1 } from './fetchdata'
 
 export async function generateSitemaps() {
-  return [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }]
+  return [{ id: 0 }, { id: 1 }]
 }
 
 export default async function sitemap({
