@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Link from 'next/link'
 import slugify from 'slugify'
-import party from 'party-js'
-import { useRef } from 'react'
 
 interface Mcq {
   _id: string
@@ -67,24 +65,6 @@ export default function ClientPage({
     }))
   }
 
-  // Inside the component function
-  const buttonRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({})
-
-  const handleClick = (questionId: string) => {
-    const option = selectedOptions[questionId]
-
-    const correctOption = fetchData.find(
-      (item) => item._id === questionId
-    )?.correctOption
-    const button = buttonRefs.current[questionId]
-
-    if (button && correctOption && option === correctOption) {
-      party.confetti(button, {
-        count: party.variation.range(20, 40),
-      })
-    }
-  }
-
   return (
     <>
       {filteredData.slice(startIdx, endIdx).map((data: Mcq) => {
@@ -127,17 +107,6 @@ export default function ClientPage({
                         ? 'Correct'
                         : 'False'}
                     </button>
-                    {/* Optional: If you want to display a button for correct answers */}
-                    {selectedOptions[data._id] === data.correctOption && (
-                      <button
-                        id={`button_${data._id}`}
-                        ref={(ref) => (buttonRefs.current[data._id] = ref)}
-                        onClick={() => handleClick(data._id)}
-                        className="flex items-center justify-center gap-2 whitespace-nowrap rounded bg-green-50 text-green-900 px-6 py-3 text-sm font-medium tracking-wide border-green-100 transition duration-300 hover:bg-green-100 focus:bg-green-100 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-green-100 disabled:bg-green-100 disabled:shadow-none"
-                      >
-                        Click me! For Celebrate 🎉
-                      </button>
-                    )}
                   </div>
                 ) : null}
               </div>
