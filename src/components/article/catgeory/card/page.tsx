@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import PostMetadata from '@/src/components/article/post/PostMetadata/page'
-import Container from '@/src/components/elements/container/page'
+import Container from '@/src/components/elements/container'
 import ImageComponent from '@/src/components/elements/image/page'
 
 export default function CatgeoryCard() {
