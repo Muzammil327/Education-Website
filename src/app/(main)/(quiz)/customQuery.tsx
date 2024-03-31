@@ -13,8 +13,8 @@ export const CustomQuery = (fetchURL: any) => {
         setError(false)
         setLoading(true)
         const response = await axios.get(fetchURL)
-        console.log('responseData:', response.data.user)
-        setFetchData(response.data.user)
+        console.log('responseData:', response.data.book)
+        setFetchData(response.data.book)
         setLoading(false)
       } catch (error) {
         console.log('error :', error)

@@ -22,9 +22,8 @@ import { useEffect, useState } from 'react'
 import { CustomQuery } from './(main)/(quiz)/customQuery'
 
 export default function Home() {
-  const { fetchdata, loading, error } = CustomQuery(
-    'https://www.codebloglab.website/api/book'
-  )
+  const { fetchdata, loading, error } = CustomQuery('/api/book')
+  console.log(fetchdata)
   if (loading) {
     return (
       <>

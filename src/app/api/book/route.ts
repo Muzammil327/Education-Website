@@ -75,11 +75,11 @@ export async function GET(req: NextRequest) {
   await connectDB()
 
   try {
-    const user = await Book.find()
+    const data = await Book.find()
     return NextResponse.json({
       success: true,
       message: 'Book Successfully Created!',
-      user,
+      book: data,
     })
   } catch (error) {
     return NextResponse.json({
