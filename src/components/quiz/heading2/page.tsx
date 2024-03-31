@@ -75,11 +75,11 @@ export default function QuizHeading2(props: { book: string; subSlug: string }) {
               key={index}
             >
               <div className="subslugcard md:h-52 h-52 md:w-80 w-full">
-                <img
+                {/* <img
                   className="background-image"
                   src="https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg"
                   alt="Background Image"
-                />
+                /> */}
                 <div className="border">
                   <h2>{heading2}</h2>
                 </div>
