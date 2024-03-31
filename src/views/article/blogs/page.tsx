@@ -1,7 +1,7 @@
 import React from 'react'
 import PostMetadata from '@/src/components/article/post/PostMetadata/page'
 import { Article } from '@/src/types/article/page'
-import Container from '@/src/components/elements/container/page'
+import Container from '@/src/components/elements/container'
 import PostCard from '@/src/components/article/post/card/page'
 import SubHeader from '@/src/components/layout/header/subheader/page'
 
