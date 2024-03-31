@@ -2,6 +2,7 @@
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import { URL } from '@/src/app/constant'
 
 export default function Page() {
   const [fetchUser, setFetchUser] = useState([])
@@ -10,7 +11,7 @@ export default function Page() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`/api/book`)
+      const response = await axios.get(`${URL}/api/book`)
       setFetchUser(response.data.user)
     } catch (error) {
       console.log('Error during Book Getting', error)
