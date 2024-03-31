@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getData1 } from './fetchdata'
+import { getData1 } from '@/src/app/(sitemap)/mcqs/book/fetchdata'
 
 export async function generateSitemaps() {
   return [{ id: 0 }, { id: 1 }]
